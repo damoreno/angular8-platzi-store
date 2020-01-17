@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductsService} from '../products.service';
 
 @Component({
   selector: 'app-banner',
@@ -7,14 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
 
-  images: string[] = [
-    'assets/images/banner-1.jpg',
-    'assets/images/banner-2.jpg',
-    'assets/images/banner-3.jpg'
-  ];
-  constructor() { }
+  images: string[];
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
+    this.images = this.productsService.getAllProducts().map((item) => item.image);
   }
 
 }
