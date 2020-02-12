@@ -12,7 +12,8 @@ import {SharedModule} from '../shared/shared.module';
     BannerComponent,
     HomeComponent,
   ],
-  imports: [HomeRoutingModule,
+  imports: [
+    HomeRoutingModule,
     CommonModule,
     SharedModule
   ]
